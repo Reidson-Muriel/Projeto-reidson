@@ -1,0 +1,162 @@
+<html>
+
+<style>
+  body{
+    background-color: darkgray;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(45deg,black, blue, black);
+    
+  }
+  h2{
+            background: linear-gradient(45deg, darkblue, black);
+            background:linear-gradient(45deg ,red,red);
+            text-align: center;
+            padding: 0px;
+            margin: 50px;
+          }
+        header{
+            margin: 100px;
+            padding: 0px ;
+          }
+          #relogio,#form_main{
+            width: 400px;
+            height: 80px;
+            background-color: black;
+            color:white;
+            border-radius: 10px 10px;
+            box-shadow: 0 0 900px rgba(0, 0, 0, .8);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0px 0px;
+            font-size: 2rem;
+            margin: 10px auto;
+            text-justify: auto;
+            border: 1px solid ;
+            background: linear-gradient(to bottom, blue 5px, black 50px,white 1550px)
+          }
+          #form_main{
+            width: 400px;
+            height: 80px;
+            background-color: black;
+            color:white;
+            border-radius: 10px 10px;
+            box-shadow: 0 0 900px rgba(0, 0, 0, .8);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0px 0px;
+            font-size: 2rem;
+            margin: 10px auto;
+            text-justify: auto;
+            border: 1px solid #f7f7f7;
+          }
+          .container .alarm-controls{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 15%;
+            right: 19.5%;
+            width: 450px;
+            flex-direction: column;
+            margin: 150px;
+            padding: 20vh;
+          }
+          .container .content{
+            display: flex;
+            align-items: center;
+            width: 100%;
+        justify-content: space-around;
+        padding: 0px 0px;
+        font-size: 2rem;
+        margin: 10px auto;
+        text-justify: auto;
+      }
+        input {
+          font-size: 16px;
+            padding: 10px;
+        }
+        
+        .button {
+          font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+          }
+          </style>
+    <body>
+      <header>
+        <h2>Cronômetro</h2>
+        <form name="form_main">
+  <div id="form_main">
+    <span id="hour">00</span>:<span id="minute">00</span>:<span id="second"
+    >00</span
+    >:<span id="millisecond">000</span>
+    <br />
+    <button type="button" name="start">Start</button>
+    <button type="button" name="pause">Pause</button>
+    <button type="button" name="reset">Reset</button>
+  </div>
+</form>
+</header>
+<script>
+  "use strict";
+
+  let hour = 0;
+  let minute = 0;
+  let second = 0;
+  let millisecond = 0;
+
+  let cron;
+
+  document.form_main.start.onclick = () => start();
+  document.form_main.pause.onclick = () => pause();
+  document.form_main.reset.onclick = () => reset();
+
+  function start() {
+    pause();
+    cron = setInterval(() => {
+      timer();
+    }, 10);
+  }
+
+  function pause() {
+    clearInterval(cron);
+  }
+
+  function reset() {
+    hour = 0;
+    minute = 0;
+    second = 0;
+    millisecond = 0;
+    document.getElementById("hour").innerText = "00";
+    document.getElementById("minute").innerText = "00";
+    document.getElementById("second").innerText = "00";
+    document.getElementById("millisecond").innerText = "000";
+  }
+
+  function timer() {
+    if ((millisecond += 10) == 1000) {
+      millisecond = 0;
+      second++;
+    }
+    if (second == 60) {
+      second = 0;
+      minute++;
+    }
+    if (minute == 60) {
+      minute = 0;
+      hour++;
+    }
+    document.getElementById("hour").innerText = returnData(hour);
+    document.getElementById("minute").innerText = returnData(minute);
+    document.getElementById("second").innerText = returnData(second);
+    document.getElementById("millisecond").innerText = returnData(millisecond);
+  }
+
+  function returnData(input) {
+    return input > 10 ? input : `0${input}`;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@1,6..12,300&display=swap"
+        rel="stylesheet">
+    <title>Portfolio-Reidson</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            background-color: black;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 26px;
+            padding: 20px 30px;
+        }
+
+        nav h3 {
+            color: white;
+        }
+
+        nav span {
+            color: green;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            color: white;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav li:hover {
+            color: green;
+            transition: 0.4s;
+        }
+
+        .nav-caixa {
+            background-color: #191919;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .nav-caixa img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+        }
+
+        .pessoal h1 {
+            font-size: 2.5em;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .pessoal h4 {
+            font-size: 1.5em;
+            font-family: 'Nunito Sans', sans-serif;
+            color: grey;
+        }
+
+        .pessoal span {
+            color: green;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            padding: 60px 15%;
+            background-color: black;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 100%;
+            border: 2px solid green;
+            margin: 20px;
+        }
+
+        section div {
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        section div h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        section div p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .inicial-2 {
+            background-color: #191919;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .inicial-2 h1 {
+            color: white;
+            font-size: 2.5em;
+        }
+
+        .card-projetos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .projetos {
+            background-color: black;
+            height: auto;
+            width: 300px;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .projetos img {
+            height: 180px;
+            margin-top: 10px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .projetos h5 {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .projetos p {
+            color: white;
+            margin-top: 10px;
+        }
+
+        .projetos a {
+            color: white;
+            background-color: green;
+            border-radius: 25px;
+            margin-top: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.4s;
+            text-decoration: none;
+        }
+
+        .projetos a:hover {
+            background-color: transparent;
+            color: white;
+            border: 2px solid green;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            .pessoal h1 {
+                font-size: 2em;
+            }
+
+            .pessoal h4 {
+                font-size: 1.2em;
+            }
+
+            section {
+                padding: 30px 10%;
+            }
+
+            .card-projetos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projetos {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .pessoal h1 {
+                font-size: 3em;
+            }
+
+            .pessoal h4 {
+                font-size: 2em;
+            }
+
+            section img {
+                max-width: 400px;
+            }
+
+            section div h3 {
+                font-size: 2.5em;
+            }
+
+            section div p {
+                font-size: 1.2em;
+            }
+
+            .inicial-2 h1 {
+                font-size: 3em;
+            }
+
+            .projetos {
+                width: 400px;
+                padding: 30px;
+            }
+
+            .projetos h5 {
+                font-size: 1.8em;
+            }
+
+            .projetos p {
+                font-size: 1.2em;
+            }
+
+            .projetos a {
+                font-size: 1.1em;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-caixa">
+        <nav>
+            <h3>Port<span>folio</span></h3>
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>Sobre mim</a></li>
+                <li><a>Projetos</a></li>
+            </ul>
+        </nav>
+        <div class="inicial-1">
+            <img src="./img/coder.png" />
+            <div class="pessoal">
+                <h1>Reidson <span>Muriel</span></h1>
+                <h4>Estudante de Programador</h4>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <img src="img/perfil.jpg">
+        <div>
+            <h3>Sobre mim</h3>
+            <p>
+                Eu sou Reidson muriel, tenho 18 anos moro em um pequeno cidade de Buritis-Mg,
+                sou estudante de tecnico em informatica, estudo desde no mês de maio de 2023 .
+                Gosto muito de aprender coisas que ainda não conheço e ainda busco mais para me
+                desenvolver como programador, e por isso que decidi fazer esse portfolio.
+                Aqui você pode ver alguns dos projetos que já realizei.
+            </p>
+        </div>
+    </section>
+
+    <div class="inicial-2">x
+        <h1>Projetos</h1>
+
+        <div class="card-projetos">
+            <div class="projetos">
+                <img src="./img/calculadora.png">
+                <h5>Calculadora</h5>
+                <p> A calculadora é uma aplicação simples. O objetivo dessa aplicação é realizar operações matematicas
+                    basicas.</p>
+                <p><a href="http://127.0.0.1:3000/portfolio/Calculadora.html" onclick="funcao1()">Ver a estrutura</a></p>
+            </div>
+
+            <div class="projetos">
+                <img style="height: 70px;
+                            margin-top: 10px;" src="./img/cronomentro.png ">
+                <h5>Cronomentro</h5>
+                <p>
+                    O cronômetro é uma ferramenta simples. Seu objetivo é medir o tempo com precisão.
+                </p>
+                <p><a href="http://127.0.0.1:3000/portfolio/cronomentro.html" style="margin-top: 136px;" onclick="funcao2()">Ver a
+                        estrutura</a></p>
+
+            </div>
+
+            <div class="projetos">
+                <img style="height: 140px;
+                        margin-top: 10px;" src="./img/cadastro.png">
+                <h5>Cadastro</h5>
+                <p> O cadastro é uma funcionalidade simples. Seu objetivo é coletar e armazenar informações pessoais dos
+                    usuários.
+                </p>
+                <p><a href="http://127.0.0.1:3000/portfolio/cadastro.html" style="margin-top: 45px;" onclick="funcao3()">Ver
+                        a estrutura</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function funcao1() {
+            var mensagem = "Clique OK para ver estrutura";
+            alert(mensagem);
+        }
+        function funcao2() {
+            var mensagem = "Clique OK para ver estrutura";
+            alert(mensagem);
+        }
+        function funcao3() {
+            var mensagem = "Clique OK para ver estrutura";
+            alert(mensagem);
+        }
+
+    </script>
+
+</body>
+
+</html>

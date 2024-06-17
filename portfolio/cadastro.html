@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cadastro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+      margin: 20px;
+      padding: 0px;
+    }
+
+    .container{
+  width: 1397px;
+  height: 641px;
+  background: linear-gradient(0, #120c56, #000000);
+  margin: -20px;
+  margin-top: -20px;
+}
+
+.stars{
+	position: absolute;
+  margin-left: 250px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	box-shadow: 100px 60px white,
+    100px 80px white,
+    80px 120px white,
+    300px 20px white,
+    250px 130px white,
+    200px 50px white,
+    150px 100px white,
+    320px 100px white,
+    100px 80px white,
+    80px 120px white,
+    300px 20px white,
+    250px 130px white,
+    200px 50px white,
+    150px 100px white,
+    320px 100px white;
+    animation: anim-stars 5s linear infinite;
+}
+
+@keyframes anim-stars {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-150px);
+    }
+}
+
+.stars::after{
+  content: " ";
+  position: absolute;
+  margin-left: 250px;
+  top: 150px;
+  text-emphasis: none;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  box-shadow: 100px 60px white,
+    100px 80px white,
+    80px 120px white,
+    300px 20px white,
+    250px 130px white,
+    200px 50px white,
+    150px 100px white,
+    320px 100px white,
+    100px 80px white,
+    80px 120px white,
+    300px 20px white,
+    250px 130px white,
+    200px 50px white,
+    150px 100px white,
+    320px 100px white;
+}
+
+.stars2{
+  position: fixed;
+  margin-left: 250px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: 15px 15px white,
+    125px 35px white,
+    50px 80px white,
+    10px 120px white,
+    275px 90px white,
+    230px 10px white,
+    120px 130px white,
+    300px 130px white,
+    220px 115px white,
+    125px 35px white,
+    50px 80px white,
+    10px 120px white,
+    275px 90px white,
+    230px 10px white,
+    120px 130px white,
+    300px 130px white,
+    220px 115px white;
+  animation: anim-stars 20s linear infinite;
+}
+
+.stars2::after{
+  content: " ";
+  position: absolute;
+  top: 450px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: 15px 15px white,
+    125px 35px white,
+    50px 80px white,
+    10px 120px white,
+    275px 90px white,
+    230px 10px white,
+    120px 130px white,
+    300px 130px white,
+    220px 115px white,
+    145px 35px white,
+    70px 80px white,
+    10px 120px white,
+    275px 90px white,
+    250px 10px white,
+    120px 130px white,
+    300px 130px white,
+    220px 115px white;
+}
+
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 150px;
+      margin-bottom: -10px;
+    }
+
+    form {
+      text-align: center;
+      margin: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 10px;
+    }
+
+    input {
+      width: auto;
+      height: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid Green;
+    }
+
+    
+    
+.olho {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+}
+
+.btn.btn-outline-dark {
+  background-color: black; 
+  color: white;    
+  cursor: pointer;
+  margin: 10px;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid green; 
+  padding: 10px;
+}
+
+.btn.btn-outline-dark:hover {
+  background-color: #343a40; 
+  color: #fff; 
+  border-color: #343a40; 
+}
+
+.btn.btn-outline-dark:focus {
+  outline: none;
+  border-color: gray;
+}
+  </style>
+</head>
+
+<body>
+  <div class="container" >
+    <div class="stars" ></div>
+    <div class="stars2" ></div>
+  
+  <h1>Cadastro</h1>
+  <form method="post" action="mailto:cindi.educacao@gmail.com">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome"  placeholder="Digite o seu nome" style="text-align: center">
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" placeholder="Digite o seu email" style="text-align: center">
+    <label for="senha">Senha</label>  
+    <input type="password" id="senha" name="senha" placeholder="Digite a sua senha" style="text-align: center">
+    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
+  </br>
+  <button type="button" class="btn btn-outline-dark">Enviar</button>
+  </form>
+</div>
+  <script>
+    const form = document.getElementById('cadastroForm');
+    document.getElementById('olho').addEventListener('mousedown', function() {
+  document.getElementById('senha').type = 'text';
+});
+
+document.getElementById('olho').addEventListener('mouseup', function() {
+  document.getElementById('senha').type = 'password';
+});
+
+// Para que o password não fique exposto apos mover a imagem.
+document.getElementById('olho').addEventListener('mousemove', function() {
+  document.getElementById('senha').type = 'password';
+});
+    
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch('/api/cadastro', {
+          method: 'POST',
+          body: data,
+        });
+        // Aqui você pode lidar com a resposta da API, se necessário
+        console.log('Resposta da API:', response);
+      } catch (error) {
+        console.error('Erro ao enviar dados:', error);
+      }
+    });
+  </script>
+</body>
+
+</html>

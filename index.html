@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reidson - Dev.Software</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        :root {
+            --text-color: white;
+            --bg-url: url(assests/bg-mobile.jpg);
+            --stroke-color: rgba(255, 255, 255, 0.5);
+            --surface-color: rgba(255, 255, 255, 0.1);
+            --surface-color-hover: rgba(0, 0, 0, 0.02);
+            --hightlight-color: rgba(255, 255, 255, 0.2);
+            --switch-bg-url: url(assests/moon-stars.svg);
+        }
+
+        .light {
+            --text-color: black;
+            --bg-url: url(assests/bg-mobile-light.jpg);
+            --stroke-color: rgba(0, 0, 0, 0.5);
+            --surface-color: rgba(0, 0, 0, 0, 0.05);
+            --surface-color-hover: rgba(0, 0, 0, 0.02);
+            --hightlight-color: rgba(0, 0, 0, 0.1);
+            --switch-bg-url: url(assests/handle.svg);
+        }
+
+
+        * {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: var(--bg-url);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 588px;
+            margin: 56px auto 0px;
+            padding: 0 24px;
+        }
+
+        #profile {
+            text-align: center;
+            padding: 24px;
+        }
+
+        #profile img {
+            width: 112px;
+        }
+
+        #profile p {
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 8px;
+        }
+
+        #switch {
+            position: relative;
+            width: 64px;
+            margin: 4px auto;
+        }
+
+        #switch button {
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 50%;
+            background:  white var(--switch-bg-url) no-repeat center;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+            animation: slide-back 0.2s;
+        }
+
+        .light #switch button {
+            animation: slide-in .4s forwards;
+        }
+
+        #switch button:hover {
+            outline: 8px solid var(--hightlight-color);
+        }
+
+        #switch span {
+            display: block;
+            width: 64px;
+            height: 24px;
+            background: var(--surface-color);
+            border: 1px solid var(--stroke-color);
+            backdrop-filter: blur(4px);
+            border-radius: 9999px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 24px 0;
+        }
+
+        ul li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 24px;
+            background: var(--surface-color);
+            border: 1px solid var(--stroke-color);
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.6s;
+        }
+
+        ul li a:hover {
+            background: var(--surface-color-hover);
+            border: 1.5px solid var(--text-color);
+        }
+
+        #social-links {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+            font-size: 24px;
+        }
+
+        #social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            transition: background 0.2s;
+            border-radius: 50%;
+        }
+
+        #social-links a:hover {
+            background: var(--hightlight-color);
+            padding: 10px;
+        }
+
+        .footer {
+            padding: 24px;
+            font-size: 14px;
+        }
+
+        @media (min-width :700px){
+            :root {
+                --bg-url: url(assests/bg-desktop.jpg);
+            }
+
+            .light {
+                --bg-url: url(assests/bg-desktop-light.jpg);
+            }
+        }
+
+        @keyframes slide-in {
+            from {
+                left: 0;
+            }
+            to {
+                left: 50%;
+            }
+        }
+
+        @keyframes slide-back {
+            from {
+                left: 50%;
+            }
+            to {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="assests/Avatar.png">
+            <p>@ReidsonMuriel</p>
+        </div>
+        <div id="switch" onclick="toggleMode()">
+            <button></button>
+            <span>
+            </span>
+        </div>
+        <ul>
+            <li>
+                <a href="http://127.0.0.1:3000/portfolio/portfolio.html" target="_blank">Ver o portfolio</a>
+            </li>
+            <li>
+                <a href="https://app.rocketseat.com.br/journey/discover/overview">Onde curso de front end gratis</a>
+            </li>
+        </ul>
+        <div id="social-links">
+            <a href="https://www.tiktok.com/@reidsonmuriel">
+                <ion-icon name="logo-tiktok"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/reidson_muriel/">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://github.com/Reidson-Muriel">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/in/reidson-muriel-alves-rom%C3%A3o-da-silva-357b3a27a/">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+        </div>
+
+        <footer style="text-align: center;">
+            Reidson Muriel | Criações Personalizadas
+        </footer>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+         function toggleMode() {
+            const html = document.documentElement
+            html.classList.toggle('light')
+
+            const img = document.querySelector("#profile img")
+
+            if (html.classList.contains('light')){
+                img.setAttribute('src', 'assests/avatar-light.png')
+            } else {
+                img.setAttribute('src', 'assests/Avatar.png')
+            
+        }
+    }
+    </script>
+</body>
+
+</html>
